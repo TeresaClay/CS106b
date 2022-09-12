@@ -6,8 +6,20 @@
 
 #include "console.h"
 #include "simpio.h"
-#include "strlib.h"
+
 using namespace std;
+
+/*
+ *         *
+ *        * *
+ *       * * *
+ *      * * * *
+ *     * * * * *
+ *    * * * * * *
+*/
+
+
+
 
 // version 1: for
 /*
