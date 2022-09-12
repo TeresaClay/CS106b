@@ -9,7 +9,8 @@
 #include "strlib.h"
 using namespace std;
 
-
+// version 1: fo
+/*
 void starPatterns(int n)
 {
     for (int i=0; i<n; i++){
@@ -26,13 +27,35 @@ void starPatterns(int n)
 
     }
 }
+*/
+
+// version 2 ( course )
+void starPatterns (int n){
+    for (int i=n-1; i >= 0; i--){
+
+        for (int j=1-n; j<=n-1;j++){
+
+            int sum=abs(i)+abs(j);
+
+            if (sum < n  &&  sum % 2 == (n-1) % 2){
+                cout << "*";
+            } else {
+                cout << " ";
+            }
+         }
+        cout << endl;
+     }
+
+}
+
+
+
+
 
 
 int main()
 {
-    string number = getLine("number of layers ?");
-
-    int n = stringToReal(number);
+    int n = getInteger("number of layers ?");
 
     if (n==0){
         n = 6;
