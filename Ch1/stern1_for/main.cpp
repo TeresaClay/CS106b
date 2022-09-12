@@ -9,7 +9,7 @@
 #include "strlib.h"
 using namespace std;
 
-// version 1: fo
+// version 1: for
 /*
 void starPatterns(int n)
 {
@@ -47,10 +47,6 @@ void starPatterns (int n){
      }
 
 }
-
-
-
-
 
 
 int main()
