@@ -9,6 +9,35 @@
 #include "simpio.h"
 using namespace std;
 
+#define version_b
+
+
+
+
+
+
+
+
+
+
+#ifdef version_b
+int fibDeath(int month) {   // beginning of # month
+    // 兔子生三对幼崽后死亡
+    int lifeMonth = 4;
+
+
+    if(month < 2) {                                     // base case (star value)
+        return month;
+    } else if (month <= lifeMonth ){                    // 无死亡
+        return fibDeath(month-1)+fibDeath(month-2);
+    } else
+        return fibDeath(month-1)+fibDeath(month-lifeMonth-1);   // 死亡
+}
+
+
+#endif
+
+#ifdef version_a
 // 兔子生三对幼崽后死亡，寿命为4个月
 int fibDeath(int month) {
     int lifeMonth = 4;
@@ -23,6 +52,7 @@ int fibDeath(int month) {
         return fibDeath(month-1)+fibDeath(month-2)-2;   // 死亡两对
     }
 }
+#endif
 
 
 // 兔子没有死亡
@@ -33,6 +63,7 @@ int fib(int month) {
         return fib(month-1)+fib(month-2);
     }
 }
+
 
 
 int main()
@@ -48,7 +79,9 @@ int main()
     cout << endl;
     cout << "兔子生三对幼崽后死亡，即寿命为4个月(月初兔子的对数，相当于上个月月末的对数; 从零月开始): " <<endl;
     for (int i=0; i <= maxMonth; i++){
-        cout << fibDeath(i) << " ";
+        //cout << fibDeath(i) << " ";
+        cout << fibRec(i,4) << " ";
+
     }
 
     return 0;
